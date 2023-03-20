@@ -57,3 +57,7 @@ if [[ `service subspaced status | grep active` =~ "running" ]]; then
 else
   echo -e "Your Subspace node \e[31mwas not installed correctly\e[39m, please reinstall."
 fi
+
+function logo {
+  bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/Logo%20last)
+}

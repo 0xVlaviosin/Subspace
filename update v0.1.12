@@ -20,8 +20,8 @@ function updateNode {
     sudo systemctl restart subspaced
 
     if [[ `service subspaced status | grep active` =~ "running" ]]; then
-          echo "Your node has been updated successfully"
-          echo "Check your node status: journalctl -u subspaced -f -o cat"
+          echo -e '\033[92m' "Your node has been updated successfully"
+          echo -e '\033[92m' "Check your node status: journalctl -u subspaced -f -o cat"
           bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/Logo%20last)
         else
           echo "Your node hasn't been updated correctly."

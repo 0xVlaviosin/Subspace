@@ -9,6 +9,7 @@ function line {
   echo "-----------------------------------------------------------------------------"
 }
 URL=https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-Ubuntu-x86_64-v3-v0.1.12
+
 function updateNode {
     sudo systemctl stop subspaced
 

@@ -22,16 +22,13 @@ function updateNode {
     if [[ `service subspaced status | grep active` =~ "running" ]]; then
           printGreen "Your node has been updated successfully"
           printGreen "Check your node status: journalctl -u subspaced -f -o cat"
+          bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/Logo%20last)
         else
           printGreen "Your node hasn't been updated correctly."
       fi
 }
 
-function txt {
-bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/Logo%20last)
-}
-
 logo
 line
 updateNode
-txt
+

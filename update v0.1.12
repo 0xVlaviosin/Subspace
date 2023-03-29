@@ -1,5 +1,5 @@
 #!/bin/bash
-
+URL=https://github.com/subspace/subspace-cli/releases/download/v0.1.12/subspace-cli-Ubuntu-x86_64-v3-v0.1.12
 function logo {
   bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/logo)
 }

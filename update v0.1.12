@@ -1,0 +1,37 @@
+#!/bin/bash
+
+function logo {
+  bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/logo)
+}
+
+function line {
+  echo "-----------------------------------------------------------------------------"
+}
+function updateNode {
+    sudo systemctl stop subspaced
+
+    cd $HOME || return
+    wget -O subspace-cli $URL
+    sudo chmod +x subspace-cli
+    sudo rm /usr/local/bin/subspace-cli
+    sudo mv subspace-cli /usr/local/bin/
+
+    source $HOME/.bash_profile
+    sudo systemctl restart subspaced
+
+    if [[ `service subspaced status | grep active` =~ "running" ]]; then
+          printGreen "Your node has been updated successfully"
+          printGreen "Check your node status: journalctl -u subspaced -f -o cat"
+        else
+          printGreen "Your node hasn't been updated correctly."
+      fi
+}
+
+function txt {
+bash <(curl -s https://raw.githubusercontent.com/cpiteam/logo/main/Logo%20last)
+}
+
+logo
+line
+updateNode
+txt
